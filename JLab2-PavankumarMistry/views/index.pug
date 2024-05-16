@@ -1,0 +1,23 @@
+extends common/layout 
+
+block layout-content 
+  section.hero-text
+    .content-wrapper
+      h1 Welcome to ShopPerfume
+      p Captivate the Senses with Every Scent.
+
+  section.content-wrapper
+    h2.shop Shop our Products
+    .perfumes
+      .perfume
+        //- image taken from https://unsplash.com/photos/n5-chanel-eau-de-parfum-spray-bottle-potCPE_Cw8A
+        img.perfume-img(src="./img/N5.jpg", alt="N5 Chanel eau de parfum spray bottle")
+        h3.perfume-title N5 Premium Perfume
+        p.perfume-price $99.99
+        a.button(href="#") Add to Cart
+      .perfume
+        //- image taken from https://unsplash.com/photos/black-and-gold-perfume-bottle-4sKdeIMiFEI
+        img.perfume-img(src="./img/coco.jpg", alt="black and gold perfume bottle")
+        h3.perfume-title Coco Leather Perfume
+        p.perfume-price $89.99
+        a.button(href="#") Add to Cart

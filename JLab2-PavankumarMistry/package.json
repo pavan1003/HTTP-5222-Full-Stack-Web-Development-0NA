@@ -1,0 +1,18 @@
+{
+  "name": "jlab2-pavankumarmistry",
+  "version": "1.0.0",
+  "description": "JLab2",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./index.js"
+  },
+  "author": "Pavan Mistry",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
