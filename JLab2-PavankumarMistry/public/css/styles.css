@@ -40,6 +40,11 @@ body {
   margin: 0;
 }
 
+.content-wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
 /* 2. HEADER */
 #header {
   display: flex;
@@ -96,12 +101,12 @@ body {
   text-align: center;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
-  margin: 30px 0 20px 0;
+  margin: 30px 200px 20px 200px;
 }
 
 .perfumes {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   margin-bottom: 30px;
 }
@@ -111,7 +116,6 @@ body {
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  margin-bottom: 20px;
 }
 
 .perfume .perfume-img {
