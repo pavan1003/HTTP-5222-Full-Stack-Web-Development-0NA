@@ -4,7 +4,9 @@ const { MongoClient, ObjectId } = require("mongodb"); //import MongoClient class
 
 //DATABASE SETUP
 const dbUrl = "mongodb://127.0.0.1:27017/";
-const client = new MongoClient(dbUrl); //create a MongoDB client
+
+//MongoDB client
+const client = new MongoClient(dbUrl);
 
 const app = express();
 const port = process.env.PORT || "8888";
@@ -21,6 +23,7 @@ app.get("/", async (request, response) => {
   let links = await getLinks();
   response.render("index", { title: "Home", menu: links });
 });
+
 app.get("/about", async (request, response) => {
   let links = await getLinks();
   response.render("about", { title: "About", menu: links });
@@ -78,7 +81,7 @@ app.get("/admin/menu/edit", async (request, response) => {
     let links = await getLinks();
     response.render("menu-edit", { title: "Edit menu link", menu: links, editLink: linkToEdit });
   } else {
-    //Ideally should show an error message 
+    //Ideally should show an error message on front end
     response.redirect("/admin/menu");
   }
 });
