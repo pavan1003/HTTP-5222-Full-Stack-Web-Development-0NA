@@ -1,0 +1,19 @@
+{
+  "name": "jlab3-pavankumarmistry",
+  "version": "1.0.0",
+  "description": "Lab 3",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./index.js"
+  },
+  "author": "Pavan Mistry",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongodb": "^6.6.2",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
