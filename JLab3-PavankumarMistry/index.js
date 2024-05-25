@@ -160,5 +160,5 @@ async function editLink(filter, link) {
   //execute an updateOne() to update the link as selected via the filter
   const options = { upsert: true };
   const result = await db.collection("menuLinks").updateOne(filter, updateDoc, options);
-  return result;
+  console.log("link Updated: Result: ", result)
 }
