@@ -1,0 +1,16 @@
+extends layout 
+block main-content 
+    h1 #{title}
+    table(style='width=100%', border='1')
+        thead
+            tr
+                th Sr.no
+                th Show Title
+                th Year 
+        tbody
+            each s,i in shows 
+                tr
+                    td #{i+1}.
+                    td
+                        a(href=`https://imdb.com/title/${s.show.ids.imdb}`) #{s.show.title}
+                    td #{s.show.year}
