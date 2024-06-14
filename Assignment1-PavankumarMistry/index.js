@@ -2,42 +2,76 @@ const express = require("express");
 const path = require("path");
 const dotenv = require("dotenv");
 
-//load the environment variables from .env
+// Load the environment variables from .env
 dotenv.config();
 
-//load db.js
+// Load db.js
 const db = require("./modules/products/db");
 
-//set up the Express app
+// Set up the Express app
 const app = express();
 const port = process.env.PORT || "8888";
 
-//set up application template engine
-//the first "views" is the setting name
-//the second value above is the path: __dirname/views
+// Set up application template engine
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 
-//set up folder for static files
+// Set up folder for static files
 app.use(express.static(path.join(__dirname, "public")));
 
-//USE PAGE ROUTES FROM ROUTER(S)
+// Set up URL encoding to allow form submission with data
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+//GET to render home page
 app.get("/", async (request, response) => {
-  let cameraList = await db.getCameras();
-  //if there's nothing in the camera-shop collection, initialize with some content then get the cameras again
+  let cameraList = await db.getCameras(false);
   if (!cameraList.length) {
     await db.initializeCameras();
-    cameraList = await db.getCameras();
+    cameraList = await db.getCameras(false);
   }
-  response.render("index", { cameras: cameraList });
+  let featuredCameraList = await db.getCameras(true);
+  response.render("home", { cameras: cameraList, featuredCameras: featuredCameraList });
 });
-app.get("/add", async (request, response) => {
-  //add a new camera
-  await db.addCamera("Hero 2",  );
+
+//GET to render about-us page
+app.get("/camera/:id", async (request, response) => {
+  let singleCamera = await db.getSingleCamera(request.query.id);
+  response.render("product-detail", { camera: singleCamera });
+});
+
+//GET to render about-us page
+app.get("/about-us", async (request, response) => {
+  response.render("about-us");
+});
+
+//GET to render add-camera page
+app.get("/admin/add-camera", async (request, response) => {
+  response.render("add-camera");
+});
+
+// POST to handle the form submission to add a new camera
+app.post("/admin/add-camera/submit", async (request, response) => {
+  // modern JS destructing
+  const { model, brand, category, imgPath, make, rating, price, featured, description } =
+    request.body;
+
+  // Call the addCamera function from db.js
+  await db.addCamera(
+    model,
+    brand,
+    category,
+    imgPath,
+    make,
+    parseFloat(rating),
+    parseFloat(price),
+    !!featured, //converting to boolean equivalent
+    description
+  );
   response.redirect("/");
 });
 
-//set up server listening
+// Set up server listening
 app.listen(port, () => {
   console.log(`Listening on http://localhost:${port}`);
 });

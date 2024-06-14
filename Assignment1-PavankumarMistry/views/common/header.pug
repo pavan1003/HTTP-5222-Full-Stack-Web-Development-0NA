@@ -1,3 +1,14 @@
-header#header 
-  h2#site-name 
-    a(href="/") Mongoose Test
+header#header.container-fluid
+  nav.navbar.navbar-expand-lg.navbar-light
+    .container.d-flex.justify-content-between.align-items-center
+      a.navbar-brand(href='/').d-flex.align-items-center
+        img.pe-3(src='/img/camera.png' alt="Logo of CamShop Website")
+        |shopCams
+      button.navbar-toggler(stype='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarNav.collapse.navbar-collapse
+        ul.navbar-nav.ms-auto
+          li.nav-item
+            a.nav-link.text-dark(href='/') Home
+          li.nav-item
+            a.nav-link.text-dark(href='/about-us') About

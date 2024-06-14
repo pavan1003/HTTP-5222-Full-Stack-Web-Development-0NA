@@ -1,16 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Honk&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+/*************************************************************
+ * TABLE OF CONTENTS
+ * =================
+ * 1. GENERAL/DEFAULT STYLES
+ * 2. HEADER
+ * -- 2a. Site logo
+ * -- 2b. Navigation
+ * 3. MAIN CONTENT
+ * -- 3a. Hero
+ * -- 3b. Other sections
+ * 4. FOOTER
+ * -- 4a. Navigation
+ * 5. MEDIA QUERIES 
+ * -- 5a. Tablet styles
+ * -- 5b. Menu Breakpoint
+ * -- 5c. Phone styles
+ *************************************************************/
+
+/* 1. GENERAL/DEFAULT STYLES */
+
+:root {
+    --primary-color: #71c9ce;
+    --accent-color: #FFF;
+    --secondary-color: #291C3A;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
 body {
-  color:#fff;
-  background-color:#222;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 20px;
+    margin: 0;
+    background-color: #E1EBED;
+    min-height: 100vh;
 }
-a {
-  color:yellow;
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
 }
-a.button, button {
-  background-color:yellow;
-  color:#000;
-  font-family:Arial, Helvetica, sans-serif;
-  text-decoration:none;
-  display:inline-block;
-  padding:0.5em 0.8em;
-  border-radius:0.3em;
+
+p {
+    margin: 0;
+}
+
+/* 2. HEADER */
+
+#header {
+    background-color: var(--primary-color);
+}
+
+#header .navbar-brand {
+    font: 50px/normal "Honk", system-ui;
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+#header .navbar-collapse.show, #header .collapsing {
+    text-align: end;
+}
+
+#header .nav-link {
+    font-size: 25px;
+}
+
+
+/* -- 2a. Site logo */
+
+#site-logo img {
+    width: 130px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* 3. MAIN CONTENT */
+#main {
+    padding-bottom: 71px;
+}
+
+/* -- 3a. Hero */
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/hero-bg.jpg") no-repeat center center;
+    /* image taken from https://unsplash.com/photos/photo-of-dslr-camera-iCtJF-A5hvs  */
+    background-size: cover;
+    height: 400px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 {
+    color: var(--accent-color);
+    font-size: 45px;
+    text-shadow: 2px 1px 0px var(--primary-color);
+}
+
+.glass-morph {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.product-img {
+    width: 354px;
+    height: 216px;
+}
+
+/* 8. FOOTER */
+#footer {
+    display: flex;
+    justify-content: center;
+    background-color: var(--primary-color);
+    padding: 1em;
 }

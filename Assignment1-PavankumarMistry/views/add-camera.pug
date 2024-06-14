@@ -1,0 +1,44 @@
+extends common/layout
+
+block layout-content
+  .container.mt-5
+    .row.my-5
+      .col-md-8.m-auto
+        .card
+          .card-body
+            h2.text-center.mb-4 Add New Camera
+            // Add Camera Form
+            form(method="post" action="/admin/add-camera/submit")
+              .row
+                .col-md-6
+                  .form-group
+                    label(for='model') Model:
+                    input#model.form-control(type='text' name='model')
+                  .form-group
+                    label(for='brand') Brand:
+                    input#brand.form-control(type='text' name='brand')
+                  .form-group
+                    label(for='category') Category:
+                    input#category.form-control(type='text' name='category')
+                  .form-group
+                    label(for='imgPath') Image Path:
+                    input#imgPath.form-control(type='text' name='imgPath')
+                .col-md-6
+                  .form-group
+                    label(for='make') Make:
+                    input#make.form-control(type='number' name='make')
+                  .form-group
+                    label(for='rating') Rating:
+                    input#rating.form-control(type='number' step='0.1' min='0' max='5' name='rating')
+                  .form-group
+                    div.form-check
+                      input#featured.form-check-input(type='checkbox' name='featured')
+                      label.form-check-label(for='featured') Featured Camera
+                  .form-group
+                    label(for='price') Price:
+                    input#price.form-control(type='number' name='price')
+                  .form-group
+                    label(for='description') Description:
+                    textarea#description.form-control(name='description' rows='3')
+
+              button.mt-3.btn.btn-primary.btn-block(type='submit') Add Camera

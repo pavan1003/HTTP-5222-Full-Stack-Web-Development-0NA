@@ -1,0 +1,72 @@
+extends common/layout
+
+block layout-content
+  .main-content
+    // Hero Banner
+    section.hero.container-fluid
+      .container.glass-morph
+        h1 Welcome to Our Camera Store!
+        p Find the best cameras for all your photography needs.
+
+    // Featured Products
+    section.my-5
+      .container
+        h2.text-center.mb-4 Featured Products
+        .row
+          each camera in featuredCameras
+            .col-sm-12.col-md-6.col-lg-4.mb-4
+              a(href=`/camera/q?id=${camera.id}`, class='text-decoration-none')
+                .card
+                  img.product-img.card-img-top(src=`img/${camera.imgPath}`, alt=`Product photo of ${camera.model}`, class='img-fluid')
+                  .card-body
+                    .d-flex.justify-content-between
+                      p.small #{camera.category}
+                    .d-flex.justify-content-between.mb-3
+                      h5.mb-0 #{camera.model}
+                      h5.text-dark.mb-0 $#{camera.price}
+                    .d-flex.justify-content-between.mb-2
+                      p.text-muted.mb-0
+                        | Rating:
+                        span.fw-bold #{camera.rating}
+
+    // Camera List
+    section.my-5
+      .container.py-5
+        h2.text-center.mb-4 Our Camera Collection
+        .row
+          each camera in cameras
+            .col-sm-12.col-md-6.col-lg-4.mb-4
+              a(href=`/camera/q?id=${camera.id}`, class='text-decoration-none')
+                .card
+                  img.product-img.card-img-top(src=`img/${camera.imgPath}`, alt=`Product photo of ${camera.model}`, class='img-fluid')
+                  .card-body
+                    .d-flex.justify-content-between
+                      p.small #{camera.category}
+                    .d-flex.justify-content-between.mb-3
+                      h5.mb-0 #{camera.model}
+                      h5.text-dark.mb-0 $#{camera.price}
+                    .d-flex.justify-content-between.mb-2
+                      p.text-muted.mb-0
+                        | Rating:
+                        span.fw-bold #{camera.rating}
+
+    // Testimonials
+    section.my-5
+      .container
+        h2.text-center.mb-4 What Our Customers Say
+        .row
+          .col-sm-12.col-md-6.col-lg-4.mb-4
+            .card
+              .card-body
+                p "I love my new camera! The quality is fantastic and it was so easy to purchase."
+                p.text-secondary — John Doe
+          .col-sm-12.col-md-6.col-lg-4.mb-4
+            .card
+              .card-body
+                p "Great customer service and fast shipping. Highly recommend this store."
+                p.text-secondary — Jane Smith
+          .col-sm-12.col-md-6.col-lg-4.mb-4
+            .card
+              .card-body
+                p "The selection of cameras here is amazing. I found exactly what I was looking for."
+                p.text-secondary — Michael Lee

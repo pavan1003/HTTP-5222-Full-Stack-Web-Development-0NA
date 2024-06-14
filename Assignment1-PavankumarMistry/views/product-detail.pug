@@ -1,0 +1,24 @@
+extends common/layout
+
+block layout-content
+  .container
+    // Back button
+    .row.mt-4
+      .col-md-6
+        a.btn.btn-secondary(href='/') Back
+    .row.mt-5
+      .col-md-6
+        img.product-img.img-fluid(src=`../img/${camera.imgPath}`, alt=`Product photo of ${camera.model}`)
+      .col-md-6
+        h2 #{camera.model}
+        p.lead $#{camera.price}
+        p
+          | #{camera.category} by #{camera.brand}
+        hr
+        h4 Product Details
+        ul
+          li Make: #{camera.make}
+          li Rating: #{camera.rating}
+          li Description: #{camera.description}
+
+
