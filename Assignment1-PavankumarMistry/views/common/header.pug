@@ -1,14 +1,27 @@
 header#header.container-fluid
+
+  // Navigation bar with Bootstrap classes
   nav.navbar.navbar-expand-lg.navbar-light
-    .container.d-flex.justify-content-between.align-items-center
+    .container
+
+      // Brand/logo section
       a.navbar-brand(href='/').d-flex.align-items-center
         img.pe-3(src='/img/camera.png' alt="Logo of CamShop Website")
-        |shopCams
-      button.navbar-toggler(stype='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+        | shopCams
+
+      // Navbar toggler button for mobile view using bootstrap
+      button.ms-auto.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
         span.navbar-toggler-icon
+
+      // Navbar menu
       #navbarNav.collapse.navbar-collapse
+
+        // Navbar items
         ul.navbar-nav.ms-auto
+          // Home link
           li.nav-item
             a.nav-link.text-dark(href='/') Home
+
+          // About link
           li.nav-item
             a.nav-link.text-dark(href='/about-us') About

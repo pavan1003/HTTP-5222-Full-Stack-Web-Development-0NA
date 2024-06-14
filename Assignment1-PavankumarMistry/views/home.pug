@@ -5,7 +5,7 @@ block layout-content
     // Hero Banner
     section.hero.container-fluid
       .container.glass-morph
-        h1 Welcome to Our Camera Store!
+        h1 Capture Every Moment!
         p Find the best cameras for all your photography needs.
 
     // Featured Products
@@ -17,7 +17,7 @@ block layout-content
             .col-sm-12.col-md-6.col-lg-4.mb-4
               a(href=`/camera/q?id=${camera.id}`, class='text-decoration-none')
                 .card
-                  img.product-img.card-img-top(src=`img/${camera.imgPath}`, alt=`Product photo of ${camera.model}`, class='img-fluid')
+                  img.product-img.card-img-top.align-self-center(src=`${camera.image}`, alt=`Product photo of ${camera.model}`, class='img-fluid')
                   .card-body
                     .d-flex.justify-content-between
                       p.small #{camera.category}
@@ -38,7 +38,7 @@ block layout-content
             .col-sm-12.col-md-6.col-lg-4.mb-4
               a(href=`/camera/q?id=${camera.id}`, class='text-decoration-none')
                 .card
-                  img.product-img.card-img-top(src=`img/${camera.imgPath}`, alt=`Product photo of ${camera.model}`, class='img-fluid')
+                  img.product-img.card-img-top.align-self-center(src=`${camera.image}`, alt=`Product photo of ${camera.model}`, class='img-fluid')
                   .card-body
                     .d-flex.justify-content-between
                       p.small #{camera.category}

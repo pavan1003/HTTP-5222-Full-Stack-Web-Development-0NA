@@ -6,19 +6,21 @@ block layout-content
     .row.mt-4
       .col-md-6
         a.btn.btn-secondary(href='/') Back
+    // Product details section
     .row.mt-5
+      .col-md-6.d-flex.justify-content-center.align-items-center
+        // Product image
+        img.product-img.img-fluid(src=`${camera.image}`, alt=`Product photo of ${camera.model}`)
       .col-md-6
-        img.product-img.img-fluid(src=`../img/${camera.imgPath}`, alt=`Product photo of ${camera.model}`)
-      .col-md-6
+        // Product title and price
         h2 #{camera.model}
         p.lead $#{camera.price}
         p
           | #{camera.category} by #{camera.brand}
         hr
+        // Product details list
         h4 Product Details
         ul
           li Make: #{camera.make}
           li Rating: #{camera.rating}
           li Description: #{camera.description}
-
-
