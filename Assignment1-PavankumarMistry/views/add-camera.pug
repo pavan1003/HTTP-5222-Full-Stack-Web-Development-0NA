@@ -6,39 +6,46 @@ block layout-content
       .col-md-8.m-auto
         .card
           .card-body
+            // Title of the form
             h2.text-center.mb-4 Add New Camera
+            
             // Add Camera Form
             form(method="post" action="/admin/add-camera/submit")
               .row
+                // Left column for form inputs
                 .col-md-6
-                  .form-group
+                  .form-group.mt-3
                     label(for='model') Model:
-                    input#model.form-control(type='text' name='model')
-                  .form-group
+                    input#model.form-control(type='text' name='model' placeholder='e.g., Canon EOS R5')
+                  .form-group.mt-3
                     label(for='brand') Brand:
-                    input#brand.form-control(type='text' name='brand')
-                  .form-group
+                    input#brand.form-control(type='text' name='brand' placeholder='e.g., Canon')
+                  .form-group.mt-3
                     label(for='category') Category:
-                    input#category.form-control(type='text' name='category')
-                  .form-group
+                    input#category.form-control(type='text' name='category' placeholder='e.g., Mirrorless')
+                  .form-group.mt-3
                     label(for='image') Image Path/URL:
-                    input#image.form-control(type='text' name='image')
+                    input#image.form-control(type='text' name='image' placeholder='/img/... or <url>')
+                  .form-group.mt-3
+                    label(for='featured') Featured Camera: 
+                    input#featured.form-check-input.ms-2(type='checkbox' name='featured')
+                
+                // Right column for form inputs
                 .col-md-6
-                  .form-group
+                  .form-group.mt-3
                     label(for='make') Make:
-                    input#make.form-control(type='number' name='make')
-                  .form-group
+                    input#make.form-control(type='number' name='make' placeholder='e.g., 2021')
+                  .form-group.mt-3
                     label(for='rating') Rating:
-                    input#rating.form-control(type='number' step='0.1' min='0' max='5' name='rating')
-                  .form-group
-                    div.form-check
-                      input#featured.form-check-input(type='checkbox' name='featured')
-                      label.form-check-label(for='featured') Featured Camera
-                  .form-group
+                    input#rating.form-control(type='number' step='0.1' min='0' max='5' name='rating' placeholder='e.g., 4.8')
+                  .form-group.mt-3
                     label(for='price') Price:
-                    input#price.form-control(type='number' name='price')
-                  .form-group
+                    input#price.form-control(type='number' name='price' placeholder='e.g., 3899')
+                  .form-group.mt-3
                     label(for='description') Description:
-                    textarea#description.form-control(name='description' rows='3')
-
-              button.mt-3.btn.btn-primary.btn-block(type='submit') Add Camera
+                    textarea#description.form-control(name='description' rows='3' placeholder='Enter camera description...')
+              
+              // Submit button row
+              .row
+                .col-12.d-flex.justify-content-center
+                  button.mt-3.btn(type='submit') Add Camera
