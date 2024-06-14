@@ -6,16 +6,11 @@
  * 1. GENERAL/DEFAULT STYLES
  * 2. HEADER
  * -- 2a. Site logo
- * -- 2b. Navigation
  * 3. MAIN CONTENT
  * -- 3a. Hero
  * -- 3b. Other sections
  * 4. FOOTER
- * -- 4a. Navigation
- * 5. MEDIA QUERIES 
- * -- 5a. Tablet styles
- * -- 5b. Menu Breakpoint
- * -- 5c. Phone styles
+ * 5. MEDIA QUERIES
  *************************************************************/
 
 /* 1. GENERAL/DEFAULT STYLES */
@@ -46,7 +41,8 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
 
-p {
+
+ul, li, p {
     margin: 0;
 }
 
@@ -68,8 +64,8 @@ p {
 
 #header .nav-link {
     font-size: 25px;
+    line-height: normal;
 }
-
 
 /* -- 2a. Site logo */
 
@@ -80,6 +76,7 @@ p {
 }
 
 /* 3. MAIN CONTENT */
+
 #main {
     padding-bottom: 71px;
 }
@@ -87,7 +84,7 @@ p {
 /* -- 3a. Hero */
 
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/hero-bg.jpg") no-repeat center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/hero-background.jpg") no-repeat center center;
     /* image taken from https://unsplash.com/photos/photo-of-dslr-camera-iCtJF-A5hvs  */
     background-size: cover;
     height: 400px;
@@ -111,15 +108,49 @@ p {
     border-radius: 10px;
 }
 
+/* -- 3b. Other sections */
+
 .product-img {
-    width: 354px;
-    height: 216px;
+    width: 100%;
+    max-width: 800px;
+    max-height: 489px;
 }
 
-/* 8. FOOTER */
+/* 4. FOOTER */
+
 #footer {
     display: flex;
     justify-content: center;
     background-color: var(--primary-color);
     padding: 1em;
+}
+
+/* 5. MEDIA QUERIES */
+
+@media screen and (max-width:768px) {
+    body {
+        font-size: 18px;
+    }
+
+    #header .navbar-brand {
+        font-size: 40px;
+    }
+
+    #header .nav-link {
+        font-size: 23px;
+    }
+}
+
+@media screen and (max-width:576px) {
+    body {
+        font-size: 16px;
+    }
+
+    #header .navbar-brand {
+        font-size: 35px;
+    }
+
+    #header .nav-link {
+        font-size: 20px;
+    }
 }
