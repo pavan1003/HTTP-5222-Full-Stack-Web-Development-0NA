@@ -1,0 +1,21 @@
+{
+  "name": "lab-6",
+  "version": "1.0.0",
+  "description": "Lab 6 for XML and JSDom module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./index.js",
+    "ui": "browser-sync start --config bs-config.js"
+  },
+  "author": "Pavan Mistry",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "jsdom": "^24.0.0",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.2",
+    "nodemon": "^3.0.3"
+  }
+}
