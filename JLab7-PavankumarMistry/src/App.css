@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Honk&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+/*************************************************************
+ * TABLE OF CONTENTS
+ * =================
+ * 1. GENERAL/DEFAULT STYLES
+ * 2. HEADER
+ * -- 2a. Site logo
+ * 3. MAIN CONTENT
+ * 4. FOOTER
+ * 5. MEDIA QUERIES
+ *************************************************************/
+
+/* 1. GENERAL/DEFAULT STYLES */
+
+:root {
+  --primary-color: #71c9ce;
+  --accent-color: #FFF;
+  --secondary-color: #291C3A;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 20px;
+  margin: 0;
+  background-color: #E1EBED;
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+
+ul, li, p {
+  margin: 0;
+}
+
+
+/* 2. HEADER */
+
+#header {
+  background-color: var(--primary-color);
+}
+
+#header .navbar-brand {
+  font: 50px/normal "Honk", system-ui;
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+#header .navbar-collapse.show, #header .collapsing {
+  text-align: end;
+}
+
+#header .nav-link {
+  font-size: 25px;
+  line-height: normal;
+}
+
+/* 3. MAIN CONTENT */
+
+#main {
+  padding-bottom: 71px;
+}
+
+/* 4. FOOTER */
+
+#footer {
+  display: flex;
+  justify-content: center;
+  background-color: var(--primary-color);
+  padding: 1em;
+}
+
+/* 5. MEDIA QUERIES */
+
+@media screen and (max-width:768px) {
+  body {
+    font-size: 18px;
+  }
+
+  #header .navbar-brand {
+    font-size: 40px;
+  }
+
+  #header .nav-link {
+    font-size: 23px;
+  }
+}
+
+@media screen and (max-width:576px) {
+  body {
+    font-size: 16px;
+  }
+
+  #header .navbar-brand {
+    font-size: 35px;
+  }
+
+  #header .nav-link {
+    font-size: 20px;
+  }
+}
