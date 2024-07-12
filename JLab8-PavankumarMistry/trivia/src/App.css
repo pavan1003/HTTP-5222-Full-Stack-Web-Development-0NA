@@ -1,0 +1,81 @@
+/*************************************************************
+ * TABLE OF CONTENTS
+ * =================
+ * 1. HEADER
+ * 2. MAIN CONTENT
+ * 3. QUESTION CONTENT
+ * 4. FOOTER
+ *************************************************************/
+
+/* 1. HEADER */
+#header {
+  background-color: black;
+  padding: 1rem;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 50px;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  color: #646cff;
+}
+
+#menu ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+
+#menu ul li a {
+  color: #ffff;
+  font-weight: 700;
+}
+
+/* 2. MAIN CONTENT */
+
+.main-container {
+  margin: 16px;
+}
+
+/* 3. QUESTION CONTENT */
+.question-container {
+  margin: 20px;
+  padding: 16px;
+  border: 1px solid grey;
+}
+
+.question-category {
+  color: grey;
+  font-style: italic;
+}
+
+.question {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.answer {
+  color: green;
+  font-weight: bold;
+}
+
+button {
+  background-color: #663399;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background-color: #552c8a;
+}
+/* 4. FOOTER */
+footer {
+  text-align: left;
+  margin-top: 2rem;
+}
