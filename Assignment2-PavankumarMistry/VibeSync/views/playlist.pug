@@ -1,0 +1,13 @@
+extends common/layout
+
+block main-content
+  div.container
+    h1 Playlist Recommendation
+    if playlist
+      div.card
+        div.card-body
+          h5.card-title= playlist.name
+          p.card-text= playlist.description
+          a(href=playlist.external_urls.spotify, target="_blank") View on Spotify
+    else
+      p No playlist found.

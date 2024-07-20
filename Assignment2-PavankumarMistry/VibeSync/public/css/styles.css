@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playwrite+IS:wght@100..400&display=swap');
+
+/*************************************************************
+ * TABLE OF CONTENTS
+ * =================
+ * 1. GENERAL/DEFAULT STYLES
+ * 2. HEADER
+ * 3. MAIN CONTENT
+ * -- 3a. Hero
+ * -- 3b. Other sections
+ * 4. FOOTER
+ * 5. MEDIA QUERIES
+ *************************************************************/
+
+/* 1. GENERAL/DEFAULT STYLES */
+
+:root {
+    --primary-color: #BEADFA;
+    --accent-color: #000;
+    --secondary-color: #291C3A;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    font: 20px/normal "Josefin Sans", sans-serif;
+    margin: 0;
+    background-color: #E1EBED;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+
+
+ul, li, p {
+    margin: 0;
+}
+
+button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+/* 2. HEADER */
+
+#header {
+    background-color: var(--primary-color);
+}
+
+#header .navbar-brand {
+    font: 50px/normal "Playwrite IS", cursive;
+    color: var(--accent-color);
+    font-weight: 700;
+    padding-left: 50px;
+}
+
+#header .navbar-brand img {
+    width: 100px;
+}
+
+/* 3. MAIN CONTENT */
+
+#main {
+    height: 73vh;
+}
+
+#main #mood {
+    max-height: 200px;
+}
+
+#main #mood-form .submit-btn {
+    font-size: 50px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* -- 3a. Hero */
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/hero-background.jpg") no-repeat center center;
+    /* image taken from https://unsplash.com/photos/photo-of-dslr-camera-iCtJF-A5hvs  */
+    background-size: cover;
+    height: 400px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 {
+    color: var(--accent-color);
+    font-size: 45px;
+    text-shadow: 2px 1px 0px var(--primary-color);
+}
+
+.glass-morph {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* -- 3b. Other sections */
+
+.product-img {
+    width: 100%;
+    max-width: 800px;
+    max-height: 489px;
+}
+
+/* 4. FOOTER */
+
+#footer {
+    display: flex;
+    justify-content: center;
+    background-color: var(--primary-color);
+    padding: 1em;
+}
+
+/* 5. MEDIA QUERIES */
+
+@media screen and (max-width:768px) {
+    body {
+        font-size: 18px;
+    }
+
+    #header .navbar-brand {
+        font-size: 40px;
+        padding-left: 30px;
+    }
+
+    #header .navbar-brand img {
+        width: 80px;
+    }
+
+    #main #mood-form .submit-btn {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width:576px) {
+    body {
+        font-size: 16px;
+    }
+
+    #header .navbar-brand {
+        font-size: 35px;
+        padding-left: 00px;
+    }
+
+
+    #header .navbar-brand img {
+        width: 70px;
+    }
+}
