@@ -5,8 +5,9 @@ const path = require("path");
 // Initialize an Express application
 const app = express();
 
-// Import custom groq api module
+// Import custom api modules
 const groq = require("./modules/groq/api");
+const spotify = require("./modules/spotify/api"); // Import Spotify API module
 
 // Set the port for the server, default to 8888 if not specified in environment variables
 const port = process.env.PORT || "8888";
@@ -25,6 +26,25 @@ app.use(express.json());
 // GET request handler for the home page
 app.get("/", async (request, response) => {
   response.render("index");
+});
+
+// POST request handler for predicting playlist
+app.post("/predict-playlist", async (request, response) => {
+  const userMood = request.body.mood;
+
+  try {
+    // Get the playlist name from Groq
+    const playlistName = await groq.predictPlaylist(userMood);
+
+    // Use the playlist name to search for a playlist on Spotify
+    const spotifyPlaylist = await spotify.searchPlaylist(playlistName);
+
+    // Send the playlist information back to the user
+    response.render("playlist", { playlist: spotifyPlaylist });
+  } catch (error) {
+    console.error(error);
+    response.render("playlist")
+  }
 });
 
 // Start the server and listen on the specified port

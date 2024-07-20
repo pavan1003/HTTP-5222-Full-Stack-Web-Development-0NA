@@ -1,17 +1,22 @@
 extends common/layout
 
 block main-content
-  div.container.d-flex.justify-content-center.align-items-center.h-75
-    form#mood-form(action="/predict-playlist" method="POST")
-      label.h1(for="mood") How are you feeling today?
-      .d-flex.gap-2.align-items-center
-        textarea.form-control#mood(type="text" name="mood" placeholder="I am feeling happy!" required)
-        button.submit-btn(type="submit")
-          i.bi.bi-arrow-right-short
-  div.container 
-    h2 How to Use
-    ol
-      li 
-      li 
-      li 
-      li 
+  // Main content section
+  #main-content
+    #mood-form.container.d-flex.justify-content-center.align-items-center
+      // Form for submitting mood to get playlist recommendations
+      form(action="/predict-playlist" method="POST")
+        label.h1(for="mood") How are you feeling today?
+        .d-flex.gap-2.align-items-center
+          textarea.form-control#mood-input(type="text" name="mood" placeholder="Everything feels artistic and imaginative!" required)
+          button.submit-btn(type="submit")
+            i.bi.bi-arrow-right-short
+
+    // Instructions Section
+    .container.mb-2
+      .h2 How to Use
+      ol
+        li Enter your current mood in the text area provided.
+        li Click the submit button to get a playlist recommendation.
+        li Wait a moment while we process your mood and find the best playlist for you.
+        li Enjoy the recommended playlist displayed on the next screen!

@@ -1,13 +1,27 @@
 extends common/layout
 
 block main-content
-  div.container
-    h1 Playlist Recommendation
+  // Main content container
+  div.container.my-3
+    // Link to go back to the home page
+    a.btn.back-btn.my-3(href='/') Back
+
+    // Check if the playlist object exists
     if playlist
-      div.card
-        div.card-body
-          h5.card-title= playlist.name
-          p.card-text= playlist.description
-          a(href=playlist.external_urls.spotify, target="_blank") View on Spotify
+      .m-auto
+        h4 Here's "#{playlist.name}" by #{playlist.owner.display_name}.
+        if playlist.description
+          p - !{playlist.description}
+        p.py-2 Enjoy your tunes!
+
+      .text-center 
+        // Embed the playlist in an iframe
+        iframe.spotify-frame(
+          src=`https://open.spotify.com/embed/playlist/${playlist.id}`
+          frameborder="0"
+          allowtransparency="true"
+          allow="encrypted-media"
+        )
     else
+      // Display a message if no playlist was found
       p No playlist found.

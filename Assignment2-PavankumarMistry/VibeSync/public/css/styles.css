@@ -6,8 +6,7 @@
  * 1. GENERAL/DEFAULT STYLES
  * 2. HEADER
  * 3. MAIN CONTENT
- * -- 3a. Hero
- * -- 3b. Other sections
+ * -- 3a. Playlist
  * 4. FOOTER
  * 5. MEDIA QUERIES
  *************************************************************/
@@ -33,14 +32,15 @@ body {
     margin: 0;
     background-color: #E1EBED;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
 
-
-ul, li, p {
+ol, ul, li, p {
     margin: 0;
 }
 
@@ -54,8 +54,12 @@ button {
     outline: inherit;
 }
 
-/* 2. HEADER */
+button:focus {
+    border: 1px solid #000;
+    border-radius: 5px;
+}
 
+/* 2. HEADER */
 #header {
     background-color: var(--primary-color);
 }
@@ -72,16 +76,19 @@ button {
 }
 
 /* 3. MAIN CONTENT */
-
 #main {
-    height: 73vh;
+    flex: 1;
 }
 
-#main #mood {
+#main-content #mood-form {
+    height: 400px;
+}
+
+#mood-input {
     max-height: 200px;
 }
 
-#main #mood-form .submit-btn {
+#mood-form .submit-btn {
     font-size: 50px;
     padding: 0px;
     display: flex;
@@ -89,47 +96,20 @@ button {
     justify-content: center;
 }
 
+/* -- 3a. Playlist */
+.back-btn {
+    background-color: var(--secondary-color);
+    color: #E1EBED;
+}
 
-/* -- 3a. Hero */
-
-.hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/hero-background.jpg") no-repeat center center;
-    /* image taken from https://unsplash.com/photos/photo-of-dslr-camera-iCtJF-A5hvs  */
-    background-size: cover;
+.spotify-frame {
+    width: 80%;
     height: 400px;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.hero h1 {
-    color: var(--accent-color);
-    font-size: 45px;
-    text-shadow: 2px 1px 0px var(--primary-color);
-}
-
-.glass-morph {
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 20px;
-    border-radius: 10px;
-}
-
-/* -- 3b. Other sections */
-
-.product-img {
-    width: 100%;
-    max-width: 800px;
-    max-height: 489px;
 }
 
 /* 4. FOOTER */
 
 #footer {
-    display: flex;
-    justify-content: center;
     background-color: var(--primary-color);
     padding: 1em;
 }
@@ -150,7 +130,7 @@ button {
         width: 80px;
     }
 
-    #main #mood-form .submit-btn {
+    #mood-form .submit-btn {
         font-size: 40px;
     }
 }
