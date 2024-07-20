@@ -52,11 +52,18 @@ button {
     font: inherit;
     cursor: pointer;
     outline: inherit;
+    transition: all ease-in 0.2s;
 }
 
 button:focus {
     border: 1px solid #000;
     border-radius: 5px;
+}
+
+button:hover {
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+    color: #E1EBED;
 }
 
 /* 2. HEADER */
@@ -100,6 +107,10 @@ button:focus {
 .back-btn {
     background-color: var(--secondary-color);
     color: #E1EBED;
+}
+.back-btn:hover {
+    border: 1px solid #000;
+    border-radius: 5px;
 }
 
 .spotify-frame {
