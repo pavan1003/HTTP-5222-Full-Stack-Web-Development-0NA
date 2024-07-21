@@ -13,8 +13,8 @@ VibeSync is a Node.js web application that suggests Spotify playlists based on t
 - [Installation](#installation)
 - [Usage](#usage)
 - [Environment Variables](#environment-variables)
-- [API Credits](#api-credits)
 - [How to Use](#how-to-use)
+- [API Credits](#api-credits)
 
 ## Installation
 
