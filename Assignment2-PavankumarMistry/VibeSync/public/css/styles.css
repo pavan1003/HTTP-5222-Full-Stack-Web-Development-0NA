@@ -14,8 +14,9 @@
 /* 1. GENERAL/DEFAULT STYLES */
 
 :root {
-    --primary-color: #BEADFA;
-    --accent-color: #000;
+    /* --primary-color: #BEADFA; */
+    --primary-color: #0BFFE1;
+    --accent-color: #E1EBED;
     --secondary-color: #291C3A;
 }
 
@@ -30,7 +31,7 @@ html {
 body {
     font: 20px/normal "Josefin Sans", sans-serif;
     margin: 0;
-    background-color: #E1EBED;
+    background-color: var(--accent-color);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -44,28 +45,6 @@ ol, ul, li, p {
     margin: 0;
 }
 
-button {
-    background: none;
-    color: inherit;
-    border: none;
-    padding: 0;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-    transition: all ease-in 0.2s;
-}
-
-button:focus {
-    border: 1px solid #000;
-    border-radius: 5px;
-}
-
-button:hover {
-    border-radius: 5px;
-    background-color: var(--secondary-color);
-    color: #E1EBED;
-}
-
 /* 2. HEADER */
 #header {
     background-color: var(--primary-color);
@@ -73,7 +52,7 @@ button:hover {
 
 #header .navbar-brand {
     font: 50px/normal "Playwrite IS", cursive;
-    color: var(--accent-color);
+    color: #000;
     font-weight: 700;
     padding-left: 50px;
 }
@@ -85,10 +64,37 @@ button:hover {
 /* 3. MAIN CONTENT */
 #main {
     flex: 1;
+    background-color: #060F29;
+    color: var(--accent-color);
+}
+
+#main-content {
+    background: url(https://i.pinimg.com/originals/e0/c4/02/e0c402dd9ef03127a27055e91865f605.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: center;
 }
 
 #main-content #mood-form {
     height: 400px;
+}
+
+#mood-form form {
+    margin-top: 5rem;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(19px);
+    -webkit-backdrop-filter: blur(19px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 50px;
+}
+
+#mood-form i {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #mood-input {
@@ -104,15 +110,6 @@ button:hover {
 }
 
 /* -- 3a. Playlist */
-.back-btn {
-    background-color: var(--secondary-color);
-    color: #E1EBED;
-}
-.back-btn:hover {
-    border: 1px solid #000;
-    border-radius: 5px;
-}
-
 .spotify-frame {
     width: 80%;
     height: 400px;
@@ -130,6 +127,15 @@ button:hover {
 @media screen and (max-width:768px) {
     body {
         font-size: 18px;
+    }
+
+    #main-content {
+        background-position: center;
+    }
+
+    #mood-form form {
+        margin-top: 7rem;
+        padding: 30px;
     }
 
     #header .navbar-brand {
@@ -156,8 +162,11 @@ button:hover {
         padding-left: 00px;
     }
 
-
     #header .navbar-brand img {
         width: 70px;
+    }
+
+    #mood-form form {
+        padding: 15px;
     }
 }
