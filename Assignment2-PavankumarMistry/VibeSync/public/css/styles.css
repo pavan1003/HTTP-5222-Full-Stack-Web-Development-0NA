@@ -14,9 +14,7 @@
 /* 1. GENERAL/DEFAULT STYLES */
 
 :root {
-    /* --primary-color: #BEADFA; */
-    --primary-color: #FFF;
-    --accent-color: #E1EBED;
+    --primary-color: #E1EBED;
     --secondary-color: #291C3A;
 }
 
@@ -31,7 +29,7 @@ html {
 body {
     font: 20px/normal "Josefin Sans", sans-serif;
     margin: 0;
-    background-color: var(--accent-color);
+    background-color: var(--primary-color);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -65,7 +63,7 @@ ol, ul, li, p {
 #main {
     flex: 1;
     background-color: #060F29;
-    color: var(--accent-color);
+    color: var(--primary-color);
 }
 
 #main-content {
