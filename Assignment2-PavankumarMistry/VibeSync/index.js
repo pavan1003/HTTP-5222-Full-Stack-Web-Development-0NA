@@ -5,16 +5,17 @@ const path = require("path");
 // Initialize an Express application
 const app = express();
 
-// Import custom api modules
+// Import Groq api modules
 const groq = require("./modules/groq/api");
-const spotify = require("./modules/spotify/api"); // Import Spotify API module
+// Import Spotify API module
+const spotify = require("./modules/spotify/api");
 
 // Set the port for the server, default to 8888 if not specified in environment variables
 const port = process.env.PORT || "8888";
 
 // Configure the application to use Pug as the template engine
-app.set("views", path.join(__dirname, "views")); // Set the views directory
-app.set("view engine", "pug"); // Set Pug as the template engine
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "pug");
 
 // Serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, "public")));
@@ -47,7 +48,7 @@ app.post("/predict-playlist", async (request, response) => {
   }
 });
 
-// Start the server and listen on the specified port
+// Start the server
 app.listen(port, () => {
   console.log(`Listening on http://localhost:${port}`);
 });

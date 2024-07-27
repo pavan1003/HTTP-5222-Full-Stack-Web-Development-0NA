@@ -12,7 +12,7 @@ let accessToken = "";
 
 /**
  * Retrieves an access token from the Spotify API using client credentials.
- * @returns {Promise<string>} - A promise that resolves to the access token.
+ * @returns {string} - The spotify access token.
  */
 async function getAccessToken() {
   // Set up the options for the token request

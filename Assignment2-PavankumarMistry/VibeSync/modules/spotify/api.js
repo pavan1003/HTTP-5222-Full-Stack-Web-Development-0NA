@@ -4,7 +4,7 @@ const { getAccessToken } = require('./auth');
 /**
  * Searches for a Spotify playlist by name.
  * @param {string} playlistName - The name of the playlist to search for.
- * @returns {Promise<Object>} - A promise that resolves to the first playlist found in the search results.
+ * @returns {Object} - The first playlist found in the search results.
  */
 async function searchPlaylist(playlistName) {
   // Retrieve the access token for Spotify API authentication

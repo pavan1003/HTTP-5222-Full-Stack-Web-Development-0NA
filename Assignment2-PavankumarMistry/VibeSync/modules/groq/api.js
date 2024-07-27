@@ -10,7 +10,7 @@ const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 /**
  * Predicts a playlist name based on the user's mood.
  * @param {string} userMood - The mood of the user as a string.
- * @returns {Promise<string>} - A promise that resolves to the playlist name.
+ * @returns {string} - The playlist name.
  */
 async function predictPlaylist(userMood) {
   try {
