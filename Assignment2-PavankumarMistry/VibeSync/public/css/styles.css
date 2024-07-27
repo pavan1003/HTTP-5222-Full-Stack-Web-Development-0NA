@@ -45,7 +45,7 @@ ol, ul, li, p {
 
 /* 2. HEADER */
 #header {
-    background-color: var(--primary-color);
+    background-color: #B7F1FC;
 }
 
 #header .navbar-brand {
@@ -116,7 +116,7 @@ ol, ul, li, p {
 /* 4. FOOTER */
 
 #footer {
-    background-color: var(--primary-color);
+    background-color: #B7F1FC;
     padding: 1em;
 }
 
