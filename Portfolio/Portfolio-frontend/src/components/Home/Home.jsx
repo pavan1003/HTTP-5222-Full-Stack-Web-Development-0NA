@@ -1,8 +1,8 @@
 import { Container, Row, Col } from "react-bootstrap";
-import homeLogo from "/PavanMistry.png";
 import Particle from "../Particle";
-import HomeContent from "./HomeContent";
 import Typewriter from "typewriter-effect";
+import { AiFillGithub, AiFillInstagram } from "react-icons/ai";
+import { FaLinkedinIn } from "react-icons/fa";
 
 function Home() {
   return (
@@ -11,12 +11,11 @@ function Home() {
         <Particle />
         <Container className="home-content">
           <Row>
-          <Col md={6} className="pb-3 d-flex justify-content-center align-items-center">
+            <Col md={6} className="pb-3 d-flex justify-content-center align-items-center">
               <img
                 src="/PavanMistry.png"
                 alt="home pic"
-                className="img-fluid"
-                style={{ maxHeight: "450px" }}
+                className="img-fluid home-img"
               />
             </Col>
             <Col md={6} className="home-header">
@@ -48,12 +47,44 @@ function Home() {
                   }}
                 />
               </div>
+              <div md="4" className="ps-5 pt-2">
+                <ul className="footer-icons">
+                  <li className="social-icons">
+                    <a
+                      className="text-white cursor-pointer"
+                      href="https://github.com/pavan1003"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <AiFillGithub size={45} />
+                    </a>
+                  </li>
+                  <li className="social-icons">
+                    <a
+                      className="text-white"
+                      href="https://www.linkedin.com/in/pavan1003/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaLinkedinIn size={45} />
+                    </a>
+                  </li>
+                  <li className="social-icons">
+                    <a
+                      className="text-white"
+                      href="https://www.instagram.com/pavan_1003"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <AiFillInstagram size={45} />
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </Col>
-            
           </Row>
         </Container>
       </Container>
-      {/* <HomeContent /> */}
     </section>
   );
 }

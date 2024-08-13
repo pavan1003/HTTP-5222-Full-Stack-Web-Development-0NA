@@ -27,7 +27,6 @@ app.use((req, res, next) => {
 
 app.get("/api/careers", async (req, res) => {
   let careerList = await db.getCareers();
-  console.log(!careerList.length);
   if (!careerList.length) {
     await db.initializeCareers();
     careerList = await db.getCareers();

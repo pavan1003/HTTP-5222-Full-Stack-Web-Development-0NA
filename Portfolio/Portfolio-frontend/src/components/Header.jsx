@@ -59,6 +59,12 @@ function Header() {
               </Nav.Link>
             </Nav.Item>
 
+            <Nav.Item>
+              <Nav.Link href="#contact" onClick={() => updateExpanded(false)}>
+                <AiOutlineFundProjectionScreen className="me-1" /> Contact
+              </Nav.Link>
+            </Nav.Item>
+
             <Nav.Item className="resume-btn">
               <Button
                 className="resume-btn-inner"

@@ -9,12 +9,11 @@ function Skills() {
   useEffect(() => {
     const fetchSkills = async () => {
       try {
-        const response = await fetch("http://localhost:8888/api/skills");
+        const response = await fetch("/api/skills");
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
         const data = await response.json();
-        console.log(data);
         setSkills(data);
       } catch (error) {
         console.error("Error fetching skills:", error);
@@ -37,8 +36,7 @@ function Skills() {
               <img
                 src={skill.skillImage}
                 alt={skill.skillName}
-                className="img-fluid rounded rounded-3 mb-1"
-                style={{ maxWidth: "100px", height: "auto" }}
+                className="img-fluid rounded rounded-3 mb-1 skill-img"
               />
               <p>{skill.skillName}</p>
             </Col>
