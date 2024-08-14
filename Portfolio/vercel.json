@@ -2,10 +2,10 @@
   "version": 2,
   "builds": [
     { "src": "Portfolio-backend/index.js", "use": "@vercel/node" },
-    { "src": "Portfolio-frontend/dist/**", "use": "@vercel/static" }
+    { "src": "Portfolio-frontend/package.json", "use": "@vercel/static" }
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "/Portfolio-backend/index.js" },
-    { "src": "/(.*)", "dest": "/Portfolio-frontend/dist/$1" }
+    { "src": "/(.*)", "dest": "/Portfolio-frontend/dist/index.html" }
   ]
 }
