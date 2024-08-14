@@ -1,11 +1,23 @@
 {
   "version": 2,
   "builds": [
-    { "src": "Portfolio-backend/index.js", "use": "@vercel/node" },
-    { "src": "Portfolio-frontend/package.json", "use": "@vercel/static" }
+    {
+      "src": "Portfolio-backend/index.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "Portfolio-frontend/package.json",
+      "use": "@vercel/static-build"
+    }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "/Portfolio-backend/index.js" },
-    { "src": "/(.*)", "dest": "/Portfolio-frontend/dist/index.html" }
+    {
+      "src": "/api/(.*)",
+      "dest": "/Portfolio-backend/index.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/Portfolio-frontend/$1"
+    }
   ]
 }

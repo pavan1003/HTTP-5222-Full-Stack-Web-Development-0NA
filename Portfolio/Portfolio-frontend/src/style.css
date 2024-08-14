@@ -301,13 +301,26 @@ button:focus {
 
 @media (max-width: 767px) {
   .Typewriter__wrapper {
-    font-size: 1.4em !important;
+    font-size: 1.6em !important;
     font-weight: 500 !important;
     position: absolute !important;
   }
 
   .Typewriter__cursor {
     display: none !important;
+  }
+
+  .home-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .home-header h1, .home-header div.ps-5 {
+    padding-left: 0px !important;
+  }
+
+  .home-header ul {
+    padding-left: 0px;
   }
 }
 

@@ -135,7 +135,7 @@ function Contact() {
               </p>
             )}
           </Col>
-          <Col sm={6} md={6} className="text-start px-5">
+          <Col sm={6} md={6} className="text-start pt-5 px-5">
             <h3 className="pb-2">
               Let's <strong className="txt-color">Talk</strong>.
             </h3>
@@ -155,7 +155,7 @@ function Contact() {
             </h3>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2882.321377706769!2d-79.59565782433776!3d43.74542264646198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b3b6cd057312b%3A0xce5c66bb7fcec5ad!2s10%20Garfella%20Dr%2C%20Toronto%2C%20ON%20M9V%202E9!5e0!3m2!1sen!2sca!4v1723592160248!5m2!1sen!2sca"
-              width="400"
+              width="100%"
               height="300"
               allowFullScreen=""
               loading="lazy"

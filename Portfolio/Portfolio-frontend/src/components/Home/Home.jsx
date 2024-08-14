@@ -16,34 +16,36 @@ function Home() {
               <img src="/PavanMistry.png" alt="home pic" className="img-fluid home-img" />
             </Col>
             <Col md={6} className="home-header">
-              <h1 className="heading mb-3">
-                Hi There!
-                <span className="wave" role="wave image">
-                  👋🏻
-                </span>
-              </h1>
+              <div>
+                <h1 className="heading mb-3">
+                  Hi There!
+                  <span className="wave" role="wave image">
+                    👋🏻
+                  </span>
+                </h1>
 
-              <h1 className="heading-name">
-                I'm
-                <strong className="main-name"> Pavan Mistry</strong>
-              </h1>
-
-              <div className="ps-5">
-                <Typewriter
-                  options={{
-                    strings: [
-                      "Full Stack Developer",
-                      "I.T. Consultant",
-                      "AI/ML Engineer",
-                      "Teacher",
-                      "Open Source Contributor",
-                    ],
-                    autoStart: true,
-                    loop: true,
-                    deleteSpeed: 10,
-                  }}
-                />
+                <h1 className="heading-name">
+                  I'm
+                  <strong className="main-name"> Pavan Mistry</strong>
+                </h1>
+                <div className="ps-5">
+                  <Typewriter
+                    options={{
+                      strings: [
+                        "Full Stack Developer",
+                        "I.T. Consultant",
+                        "AI/ML Engineer",
+                        "Teacher",
+                        "Open Source Contributor",
+                      ],
+                      autoStart: true,
+                      loop: true,
+                      deleteSpeed: 10,
+                    }}
+                  />
+                </div>
               </div>
+
               <div md="4" className="pt-5">
                 <ul className="d-flex">
                   <li className="social-icons">
@@ -75,7 +77,7 @@ function Home() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <MdOutlineEmail  size={45} />
+                      <MdOutlineEmail size={45} />
                     </a>
                     Email
                   </li>
