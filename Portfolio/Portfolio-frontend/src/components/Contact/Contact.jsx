@@ -1,22 +1,49 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Particle from "../Particle";
-
 import { Container, Col, Row, Form, Button } from "react-bootstrap";
 
 function Contact() {
   const [validated, setValidated] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [feedbackMessage, setFeedbackMessage] = useState("");
 
-  const handleSubmit = (event) => {
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (event) => {
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
     } else {
-      // You can handle the successful form submission here
+      event.preventDefault();
+      try {
+        const response = await fetch("http://localhost:8888/api/send-email", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+
+        if (response.ok) {
+          setFeedbackMessage("Message sent successfully!");
+        } else {
+          setFeedbackMessage("Failed to send message.");
+        }
+      } catch (error) {
+        setFeedbackMessage("An error occurred. Please try again.");
+      }
     }
 
     setValidated(true);
   };
+
   return (
     <Container fluid id="contact" className="about-section">
       <Particle />
@@ -32,21 +59,46 @@ function Contact() {
             <Form noValidate validated={validated} onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="validationName">
                 <Form.Label>Name</Form.Label>
-                <Form.Control required type="text" placeholder="Enter your name" />
+                <Form.Control
+                  required
+                  className="w-75"
+                  type="text"
+                  name="name"
+                  placeholder="Enter your name"
+                  value={formData.name}
+                  onChange={handleChange}
+                />
                 <Form.Control.Feedback type="invalid">
                   Please provide your name.
                 </Form.Control.Feedback>
               </Form.Group>
               <Form.Group className="mb-3" controlId="validationEmail">
                 <Form.Label>Email</Form.Label>
-                <Form.Control required type="email" placeholder="Enter your email" />
+                <Form.Control
+                  required
+                  className="w-75"
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  value={formData.email}
+                  onChange={handleChange}
+                />
                 <Form.Control.Feedback type="invalid">
                   Please provide a valid email.
                 </Form.Control.Feedback>
               </Form.Group>
               <Form.Group className="mb-3" controlId="validationMessage">
                 <Form.Label>Message</Form.Label>
-                <Form.Control required as="textarea" rows={3} placeholder="Enter your message" />
+                <Form.Control
+                  required
+                  className="w-75"
+                  as="textarea"
+                  rows={3}
+                  name="message"
+                  placeholder="Enter your message"
+                  value={formData.message}
+                  onChange={handleChange}
+                />
                 <Form.Control.Feedback type="invalid">
                   Please provide a message.
                 </Form.Control.Feedback>
@@ -55,6 +107,7 @@ function Contact() {
                 Send Message
               </Button>
             </Form>
+            {feedbackMessage && <p className="mt-3 text-success">{feedbackMessage}</p>}
           </Col>
           <Col sm={6} md={6} className="text-start px-5">
             <h3 className="pb-2">
@@ -79,9 +132,9 @@ function Contact() {
               width="400"
               height="300"
               // style="border:0;"
-              allowfullscreen=""
+              allowFullScreen=""
               loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
+              referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </Col>
         </Row>
