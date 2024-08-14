@@ -20,6 +20,9 @@ function AboutCard() {
     <section className="bsb-timeline-1 py-5 py-xl-8">
       <div className="container">
         <div className="row justify-content-center">
+          <h1 className="project-heading pb-4">
+            Professional <strong className="txt-color">Experiences</strong>
+          </h1>
           <div className="col-10 col-md-8 col-xl-6">
             <ul className="timeline">
               {careers.map((career, index) => (
@@ -29,10 +32,8 @@ function AboutCard() {
                       <div className="card border-0">
                         <div className="card-body p-0 my-2">
                           <h5 className="card-subtitle text-secondary">
-                            {career.jobStartDate.split('T')[0]} -
-                            {career.jobEndDate
-                              ? " " + career.jobEndDate.split('T')[0]
-                              : " Present"}
+                            {career.jobStartDate.split("T")[0]} -
+                            {career.jobEndDate ? " " + career.jobEndDate.split("T")[0] : " Present"}
                           </h5>
                           <h4 className="card-title text-start ms-3 mb-3">
                             <Row className="text-start">
