@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle";
 import Aboutcard from "./AboutCard";
+import Experience from "./Experience";
 
 function About() {
   return (
@@ -20,6 +21,7 @@ function About() {
             {/* Image taken from https://www.freepik.com/free-vector/colourful-illustration-programmer-working_5483080.htm#fromView=search&page=1&position=0&uuid=0d997524-bd8e-4749-bf48-23364fcc3515 */}
           </Col>
         </Row>
+        <Experience />
       </Container>
     </Container>
   );

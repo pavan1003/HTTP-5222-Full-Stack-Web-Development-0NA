@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Particle from "../Particle";
-import { Container, Col, Row, Form, Button } from "react-bootstrap";
+import { Container, Col, Row, Form, Button, Spinner } from "react-bootstrap";
 
 function Contact() {
   const [validated, setValidated] = useState(false);
@@ -10,6 +10,8 @@ function Contact() {
     message: "",
   });
   const [feedbackMessage, setFeedbackMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(true);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -22,8 +24,9 @@ function Contact() {
       event.stopPropagation();
     } else {
       event.preventDefault();
+      setIsLoading(true);
       try {
-        const response = await fetch("http://localhost:8888/api/send-email", {
+        const response = await fetch("http://localhost:888/api/send-email", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -33,11 +36,16 @@ function Contact() {
 
         if (response.ok) {
           setFeedbackMessage("Message sent successfully!");
+          setIsSuccess(true);
         } else {
           setFeedbackMessage("Failed to send message.");
+          setIsSuccess(false);
         }
       } catch (error) {
         setFeedbackMessage("An error occurred. Please try again.");
+        setIsSuccess(false);
+      } finally {
+        setIsLoading(false);
       }
     }
 
@@ -103,11 +111,29 @@ function Contact() {
                   Please provide a message.
                 </Form.Control.Feedback>
               </Form.Group>
-              <Button variant="primary" type="submit">
-                Send Message
+              <Button variant="primary" type="submit" disabled={isLoading}>
+                {isLoading ? (
+                  <>
+                    <Spinner
+                      as="span"
+                      animation="border"
+                      size="sm"
+                      role="status"
+                      aria-hidden="true"
+                      className="mx-2"
+                    />
+                    Sending...
+                  </>
+                ) : (
+                  "Send Message"
+                )}
               </Button>
             </Form>
-            {feedbackMessage && <p className="mt-3 text-success">{feedbackMessage}</p>}
+            {feedbackMessage && (
+              <p className={`mt-3 ${isSuccess ? "text-success" : "text-danger"}`}>
+                {feedbackMessage}
+              </p>
+            )}
           </Col>
           <Col sm={6} md={6} className="text-start px-5">
             <h3 className="pb-2">
@@ -131,7 +157,6 @@ function Contact() {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2882.321377706769!2d-79.59565782433776!3d43.74542264646198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b3b6cd057312b%3A0xce5c66bb7fcec5ad!2s10%20Garfella%20Dr%2C%20Toronto%2C%20ON%20M9V%202E9!5e0!3m2!1sen!2sca!4v1723592160248!5m2!1sen!2sca"
               width="400"
               height="300"
-              // style="border:0;"
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

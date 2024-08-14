@@ -17,7 +17,7 @@ async function initializeCareers() {
   // Define an array of career objects to be inserted into the collection
   const careerList = [
     {
-      jobTitle: "Full-stack Developer Intern",
+      jobTitle: "Full Stack Developer Intern",
       companyName: "Vardaam Web Solutions Pvt. Ltd.",
       jobStartDate: new Date("2022-04-01"),
       jobEndDate: new Date("2022-07-31"),
@@ -26,7 +26,7 @@ async function initializeCareers() {
       careerImage: "/career/Vardaam.png",
     },
   ];
-   // Ensure the database connection is established
+  // Ensure the database connection is established
   await connect();
   // Insert the list of career into the collection
   await career.insertMany(careerList);
@@ -43,7 +43,7 @@ async function initializeProjects() {
       projectImage: "/project/Portfolio.png",
     },
   ];
-   // Ensure the database connection is established
+  // Ensure the database connection is established
   await connect();
   // Insert the list of projects into the collection
   await project.insertMany(projectList);
@@ -57,7 +57,7 @@ async function initializeSkills() {
       skillImage: "/skill/JavaScript.png",
     },
   ];
-   // Ensure the database connection is established
+  // Ensure the database connection is established
   await connect();
   // Insert the list of skills into the collection
   await skill.insertMany(skillList);

@@ -20,10 +20,10 @@ function Home2() {
               </i>
               My field of Interest's are building new &nbsp;
               <i>
-                <b className="txt-color">Web Technologies and Products </b> and also in areas related
-                to <b className="txt-color">Blockchain.</b>
+                <b className="txt-color">Web Technologies and Products </b> and also in areas
+                related to <b className="txt-color">Blockchain.</b>
               </i>
-              Whenever possible, I also apply my passion for developing products with{" "}
+              Whenever possible, I also apply my passion for developing products with
               <b className="txt-color">Node.js</b> and
               <i>
                 <b className="txt-color"> Modern Javascript Library and Frameworks</b>

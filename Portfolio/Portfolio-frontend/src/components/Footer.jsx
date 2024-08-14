@@ -1,6 +1,7 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { AiFillGithub, AiFillInstagram } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
+import { MdOutlineEmail } from "react-icons/md";
 
 function Footer() {
   let date = new Date();
@@ -12,13 +13,12 @@ function Footer() {
           <h3>© Copyright Pavan Mistry, {year}. All rights reserved.</h3>
         </Col>
         <Col md="4" className="footer-body">
-          <ul className="footer-icons">
+          <ul className="d-flex mb-0">
             <li className="social-icons">
               <a
                 className="text-white"
                 href="https://github.com/pavan1003"
                 target="_blank"
-                rel="noopener noreferrer"
               >
                 <AiFillGithub size={25} />
               </a>
@@ -28,7 +28,6 @@ function Footer() {
                 className="text-white"
                 href="https://www.linkedin.com/in/pavan1003/"
                 target="_blank"
-                rel="noopener noreferrer"
               >
                 <FaLinkedinIn size={25} />
               </a>
@@ -36,9 +35,17 @@ function Footer() {
             <li className="social-icons">
               <a
                 className="text-white"
+                href="mailto:pavandm.03@gmail.com"
+                target="_blank"
+              >
+                <MdOutlineEmail size={25} />
+              </a>
+            </li>
+            <li className="social-icons">
+              <a
+                className="text-white"
                 href="https://www.instagram.com/pavan_1003"
                 target="_blank"
-                rel="noopener noreferrer"
               >
                 <AiFillInstagram size={25} />
               </a>

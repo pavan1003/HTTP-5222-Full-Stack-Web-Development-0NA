@@ -5,8 +5,9 @@ const dotenv = require("dotenv");
 // Load environment variables from .env file
 dotenv.config();
 
-// Import custom database module
-const db = require("./modules/portfolio/db");
+// Import custom modules
+const db = require("./modules/database/db");
+const { sendEmail } = require("./modules/api/nodemailer");
 
 // Initialize an Express application
 const app = express();
@@ -19,11 +20,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*')
-  res.setHeader('Access-Control-Allow-Methods', '*')
-  res.setHeader('Access-Control-Allow-Headers', '*') // Allow all headers
-  next()
-})
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "*");
+  res.setHeader("Access-Control-Allow-Headers", "*"); // Allow all headers
+  next();
+});
 
 app.get("/api/careers", async (req, res) => {
   let careerList = await db.getCareers();
@@ -48,6 +49,18 @@ app.get("/api/skills", async (req, res) => {
     skillList = await db.getSkills();
   }
   res.send(skillList);
+});
+
+app.post("/api/send-email", async (req, res) => {
+  const { name, email, message } = req.body;
+
+  const result = await sendEmail(email, `[Contact form submission from ${name} <${email}>]`, message);
+
+  if (result.success) {
+    return res.status(200).json({ message: "Email sent successfully", info: result.info });
+  } else {
+    return res.status(500).json({ message: "Failed to send email", error: result.error });
+  }
 });
 
 // Start the server and listen on the specified port
