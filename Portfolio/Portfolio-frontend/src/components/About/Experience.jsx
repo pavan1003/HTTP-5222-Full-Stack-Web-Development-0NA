@@ -5,7 +5,7 @@ function AboutCard() {
   const [careers, setCareers] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8888/api/careers")
+    fetch("/api/careers")
       .then((response) => response.json())
       .then((data) => {
         const sortedCareers = data.sort(
