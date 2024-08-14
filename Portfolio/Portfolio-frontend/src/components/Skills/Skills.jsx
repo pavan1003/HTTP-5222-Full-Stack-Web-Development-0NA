@@ -9,12 +9,13 @@ function Skills() {
   useEffect(() => {
     const fetchSkills = async () => {
       try {
-        const response = await fetch("/api/skills");
+        const response = await fetch("http://localhost:8888/api/skills");
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
         const data = await response.json();
-        setSkills(data);
+        const sortedSkills = data.sort((a, b) => a.skillName.localeCompare(b.skillName));
+        setSkills(sortedSkills);
       } catch (error) {
         console.error("Error fetching skills:", error);
       }

@@ -406,7 +406,7 @@ button:focus {
 }
 
 .skill-img {
-  max-width: 100px;
+  max-width: 100px !important;
   height: auto;
 }
 
